@@ -7,9 +7,10 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 import streamlit as st
 
-load_dotenv()
 langchainkey = st.secrets.get("LANGCHAIN_API_KEY", os.getenv("LANGCHAIN_API_KEY"))
-os.environ["LANGCHAIN_API_KEY"] = langchainkey
+print("LANGCHAIN_API_KEY:", repr(langchainkey))  # Debug output
+print("Type:", type(langchainkey))
+
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", "You are my chat bot, you will recieve a negative sentence from user and you are bound to change the perspective into something positive ."
