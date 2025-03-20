@@ -27,7 +27,7 @@ def Generate_Response(question, llm, temperature, max_tokens):
 
 st.title("Enhanced Q&A Chatbot With Ollama")
 
-llm = st.sidebar.selectbox("Select Open Source model",["mistral", "gemma:2b"])
+llm = st.sidebar.selectbox("Select Open Source model",["gemma:2b"])
 temperature=st.sidebar.slider("Temperature",min_value=0.0,max_value=1.0,value=0.7)
 max_tokens = st.sidebar.slider("Max Tokens", min_value=50, max_value=300, value=150)
 
